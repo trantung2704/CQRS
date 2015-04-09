@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Brick.MiscUtil</name>
+    </assembly>
+    <members>
+        <member name="M:Brick.MiscUtil.Extensions.AssemblyExtensions.GetLoadableTypes(System.Reflection.Assembly)">
+            <summary>
+            Get all loadable types from a given assembly.
+            </summary>
+            <param name="assembly">The assembly to load types from.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.EnumerableExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">The <see cref="T:System.Collections.Generic.IEnumerable`1"/> to check for nullness or emptiness.</param>
+            <returns><c>true</c> if the source sequence contains any elements; otherwise, false.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Repeats an action for each element in an array or an object collection that implements the System.Collections.IEnumerable or System.Collections.Generic.IEnumerable&lt;T&gt; interface.
+            </summary>
+            <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">A sequence of values to invoke a function on.</param>
+            <param name="action">A function to apply to each object of the sequence.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/> or <paramref name="action"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.EnumerableExtensions.BuildString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
+            <summary>
+            Build a string from a sequence of objects.
+            </summary>
+            <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">A sequence of values to invoke a transform function on.</param>
+            <param name="selector">A transform function to apply to each object of the sequence.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/> or <paramref name="selector"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.EnumerableExtensions.Join``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String)">
+            <summary>
+            Concatenates the members of a constructed collection of arbitrary objects, using the specified separator between each member.
+            </summary>
+            <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">A collection that contains the objects to concatenate.</param>
+            <param name="selector">A transform function to apply to each object of the sequence.</param>
+            <param name="separator">The string to use as a separator.</param>
+            <returns>A string that consists of the members of values delimited by the separator string. If values has no members, the method returns <see cref="F:System.String.Empty"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/> or <paramref name="selector"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.EnumerableExtensions.IsIn``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Check whether a collection contains an specified item.
+            </summary>
+            <typeparam name="T">The type of the elements of <paramref name="collection"/>.</typeparam>
+            <param name="item">The item to check.</param>
+            <param name="collection">A sequence in which to locate a value.</param>
+            <returns><c>true</c> if item is in the collection, otherwise <c>false</c>. Always returns <c>false</c> if item is null.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="collection"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.StringExtensions.EqualsIgnoreCase(System.String,System.String)">
+            <summary>
+            Determines whether this string and a specified <see cref="T:System.String"/> object have the same value, ignore their casing.
+            </summary>
+            <param name="subject">The subject string to be compared.</param>
+            <param name="other">The string to compare to this instance.</param>
+            <returns>true if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, false.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="subject"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.StringExtensions.FormatWithMask(System.String,System.String)">
+            <summary>
+            Format an input string according to a given mask.
+            </summary>
+            <param name="source">The input string.</param>
+            <param name="mask">The mask should contain # and other character. # stands for a character in the input string.
+            For example: Formatting 123456 with mask ###-### results in 123-456</param>
+            <returns>The formatted string.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/> or <paramref name="mask"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.StringExtensions.RegexReplace(System.String,System.String,System.String)">
+            <summary>
+            In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.
+            </summary>
+            <param name="source">The string to search for a match.</param>
+            <param name="pattern">The regular expression pattern to match.</param>
+            <param name="replacement">The replacement string.</param>
+            <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string.</returns>
+            <exception cref="T:System.ArgumentException">A regular expression parsing error occurred.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/>, <paramref name="pattern"/>, or <paramref name="replacement"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="options"/> is not a valid bitwise combination of <see cref="T:System.Text.RegularExpressions.RegexOptions"/> values.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.StringExtensions.RegexReplace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.
+            </summary>
+            <param name="source">The string to search for a match.</param>
+            <param name="pattern">The regular expression pattern to match.</param>
+            <param name="replacement">The replacement string.</param>
+            <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
+            <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string.</returns>
+            <exception cref="T:System.ArgumentException">A regular expression parsing error occurred.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/>, <paramref name="pattern"/>, or <paramref name="replacement"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="options"/> is not a valid bitwise combination of <see cref="T:System.Text.RegularExpressions.RegexOptions"/> values.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.StringExtensions.Remove(System.String,System.Char[])">
+            <summary>
+            Returns a new string in which all occurrences of specified characters in the current instance are removed.
+            </summary>
+            <param name="source"></param>
+            <param name="removedChars">The characters to be removed.</param>
+            <returns>A string that is equivalent to the current string except that all instances of <paramref name="removedChars"/> are removed.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/> or <paramref name="removedChars"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.StringExtensions.Remove(System.String,System.String[])">
+            <summary>
+            Returns a new string in which all occurrences of specified characters in the current instance are removed.
+            </summary>
+            <param name="source"></param>
+            <param name="removedStrings">The characters to be removed.</param>
+            <returns>A string that is equivalent to the current string except that all instances of <paramref name="removedStrings"/> are removed.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/> or <paramref name="removedStrings"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.StringExtensions.Replace(System.String,System.Char[],System.String)">
+            <summary>
+            Returns a new string in which all occurrences of specified characters in the current instance are replaced with another specified string.
+            </summary>
+            <param name="source"></param>
+            <param name="oldChars">The characters to be replaced.</param>
+            <param name="substituent">The string to replace all occurrences of <paramref name="oldChars"/>.</param>
+            <returns>A string that is equivalent to the current string except that all instances of <paramref name="oldChars"/> are replaced with <paramref name="substituent"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/> or <paramref name="oldChars"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.StringExtensions.Replace(System.String,System.String[],System.String)">
+            <summary>
+            Returns a new string in which all occurrences of specified strings in the current instance are replaced with another specified string.
+            </summary>
+            <param name="source"></param>
+            <param name="oldStrings">The strings to be replaced.</param>
+            <param name="substituent">The string to replace all occurrences of <paramref name="oldStrings"/>.</param>
+            <returns>A string that is equivalent to the current string except that all instances of <paramref name="oldStrings"/> are replaced with <paramref name="substituent"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="source"/> or <paramref name="oldStrings"/> is null.</exception>
+        </member>
+        <member name="M:Brick.MiscUtil.Extensions.StringExtensions.SafeFormat(System.String,System.Object[])">
+            <summary>
+            Safely replaces one or more format items in a specified string with the string representation of a specified object. Originally used to format string to write to log.
+            </summary>
+            <param name="format">A composite format string.</param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <returns>A copy of <paramref name="format"/> in which the format items have been replaced by the string representation of the corresponding objects in <paramref name="args"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="format"/> is null.</exception>
+            <exception cref="T:System.FormatException"><paramref name="format"/> is invalid.-or- The index of a format item is less than zero, or greater than or equal to the length of the <paramref name="args"/> array.</exception>
+        </member>
+    </members>
+</doc>
