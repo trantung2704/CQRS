@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using CompositionRoot;
 using Cqrs.Core;
 using SimpleInjector;
@@ -16,14 +17,14 @@ namespace CqrsConsoleApplication
             Console.ReadLine();
         }
 
-        private static Container BuildContainer()
+        private static SimpleInjector.Container BuildContainer()
         {
-            var container = new Container();
+            var container = new SimpleInjector.Container();
 
             return container.RegisterDependencies();
         }
 
-        private static void Run(this Container container)
+        private static void Run(this SimpleInjector.Container container)
         {
             var controller = container.GetInstance<CustomerController>();
             var repository = container.GetInstance<ICustomerRepository>();
